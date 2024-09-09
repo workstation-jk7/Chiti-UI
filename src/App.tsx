@@ -1,8 +1,6 @@
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 function App() {
   const [deferredPrompt, setDeferredPrompt] = useState(null);
@@ -44,7 +42,7 @@ function App() {
 
   return (
     <div>
-      <h1>My PWA App</h1>
+      <h1>Chiti</h1>
       {/* Your app content */}
       {showInstallButton && (
         <button onClick={handleInstallClick} id="install-button">
