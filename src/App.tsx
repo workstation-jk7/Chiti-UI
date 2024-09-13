@@ -42,7 +42,7 @@ function App() {
 
   return (
     <div className="welcome-container">
-      <img src="../images/logo.svg"/>
+      <img src="../images/logo.png"/>
       {/* Your app content */}
       {showInstallButton && (
         <button onClick={handleInstallClick} id="install-button">
