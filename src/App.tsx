@@ -41,8 +41,8 @@ function App() {
   };
 
   return (
-    <div>
-      <h1>Chiti</h1>
+    <div className="welcome-container">
+      <img src="../images/logo.svg"/>
       {/* Your app content */}
       {showInstallButton && (
         <button onClick={handleInstallClick} id="install-button">
