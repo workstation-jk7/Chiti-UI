@@ -44,11 +44,11 @@ function App() {
     <div className="welcome-container">
       <img src="../images/chiti-vertical-logo.svg"/>
       {/* Your app content */}
-      {showInstallButton && (
+      {/* {showInstallButton && (
         <button onClick={handleInstallClick} id="install-button">
           Install App
         </button>
-      )}
+      )} */}
     </div>
   );
 }
