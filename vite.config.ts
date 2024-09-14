@@ -16,7 +16,7 @@ export default defineConfig({
         theme_color: '#ffffff',
         icons: [
           {
-            src: '/favicon.ico',
+            src: '/images/logo.svg',
             sizes: '64x64',
             type: 'image/x-icon'
           }
