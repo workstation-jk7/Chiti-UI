@@ -1,7 +1,7 @@
 import React from 'react';
-import DashboardPage from './pages/Dashboard/Dashboard';
-import ProfilePage from './pages/Profile/Profile';
-import LoginPage from './pages/Login/Login';
+import DashboardPage from '../pages/Dashboard/Dashboard';
+import ProfilePage from '../pages/Profile/Profile';
+import LoginPage from '../pages/Login/Login';
 
 const ROUTE_PREFIX = '/app';
 

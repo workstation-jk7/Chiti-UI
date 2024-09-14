@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import AppRoutes from './Route';
-import { routePath } from './RouteConfig';
+import AppRoutes from './route/Route';
+import { routePath } from './route/RouteConfig';
 import { AppConfig } from './App.config';
 
 import './App.css'
