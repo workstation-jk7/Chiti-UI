@@ -11,6 +11,7 @@ const LoginPage: React.FC = () => {
       // The signed-in user info
       const user = result.user;
       console.log('User:', user);
+      alert(user?.displayName);
       // You can redirect the user to the dashboard here
     } catch (error) {
       console.error('Error during sign-in:', error);

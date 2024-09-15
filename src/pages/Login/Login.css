@@ -34,10 +34,8 @@
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
   }
   
-  .sign-in-control > button.google-icon {
+  .sign-in-control .google-icon {
     width: 24px;
-    height: 24px;
-    margin-right: 8px;
   }
   
   
