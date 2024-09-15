@@ -24,7 +24,7 @@ export const routePath = {
 
 const routesConfig: RouteConfig[] = [
   {
-    path: routePath.Dashboard,
+    path: withPrefix(routePath.Dashboard),
     element: <DashboardPage />,
     isPublic: false,
   },
@@ -34,7 +34,7 @@ const routesConfig: RouteConfig[] = [
     isPublic: true,
   },
   {
-    path: routePath.Profile,
+    path: withPrefix(routePath.Profile),
     element: <ProfilePage />,
     isPublic: false,
   },

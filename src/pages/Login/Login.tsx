@@ -14,7 +14,7 @@ const LoginPage: React.FC = () => {
       // The signed-in user info
       const user = result.user;
       sessionStorage.setItem('user', JSON.stringify(user));
-      alert(user?.displayName);
+      //alert(user?.displayName);
       setTimeout(() => {
         navigate(routePath.Dashboard);
       },500)
