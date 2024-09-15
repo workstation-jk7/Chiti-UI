@@ -1,17 +1,23 @@
 import React from 'react';
-import { auth, provider } from '../../auth/firebase';
+import { useNavigate } from 'react-router-dom';
 import { signInWithPopup } from 'firebase/auth';
+import { routePath } from '../../route/RouteConfig';
+import { auth, provider } from '../../auth/firebase';
 
 import './Login.css';
 
 const LoginPage: React.FC = () => {
+  const navigate = useNavigate();
   const handleLogin = async () => {
     try {
       const result = await signInWithPopup(auth, provider);
       // The signed-in user info
       const user = result.user;
-      console.log('User:', user);
+      sessionStorage.setItem('user', JSON.stringify(user));
       alert(user?.displayName);
+      setTimeout(() => {
+        navigate(routePath.Dashboard);
+      },500)
       // You can redirect the user to the dashboard here
     } catch (error) {
       console.error('Error during sign-in:', error);
