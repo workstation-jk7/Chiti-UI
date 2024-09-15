@@ -1,7 +1,6 @@
 import React from 'react';
 import { auth, provider } from '../../auth/firebase';
 import { signInWithPopup } from 'firebase/auth';
-import { GoogleLoginButton } from "react-social-login-buttons";
 
 import './Login.css';
 
