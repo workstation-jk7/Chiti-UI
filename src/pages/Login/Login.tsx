@@ -1,4 +1,3 @@
-// @ts-ignore
 import React from 'react';
 import { auth, provider } from '../../auth/firebase';
 import { signInWithPopup } from 'firebase/auth';
@@ -23,7 +22,10 @@ const LoginPage: React.FC = () => {
       <img src='/images/chiti-horizontal-logo.svg'/>
       <img src='/images/ruppee-background.svg'/>
       <div className='sign-in-control'>
-        <GoogleLoginButton onClick={handleLogin} />
+        <button onClick={handleLogin}>
+            <img className='google-icon' src='/images/google-logo.svg'/>
+            Login with Google
+        </button>
       </div>
     </div>
   );
