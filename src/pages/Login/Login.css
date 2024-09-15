@@ -12,3 +12,12 @@
     background-repeat: no-repeat;
     margin: 0;
 }
+
+.sign-in-control {
+    width: 90%;
+}
+
+.sign-in-control> button {
+    display: flex;
+    justify-content: center;
+}
