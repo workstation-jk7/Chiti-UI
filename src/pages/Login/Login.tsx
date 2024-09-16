@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { signInWithPopup } from 'firebase/auth';
 import { routePath } from '../../route/RouteConfig';
 import { auth, provider } from '../../auth/firebase';
+import { AppConfig } from '../../App.config';
 
 import './Login.css';
 
@@ -14,6 +15,7 @@ const LoginPage: React.FC = () => {
       const result = await signInWithPopup(auth, provider);
       // The signed-in user info
       const user = result.user;
+      sessionStorage.setItem(AppConfig.AuthToken, (user as any)?.accessToken);
       sessionStorage.setItem('user', JSON.stringify(user));
       //alert(user?.displayName);
       setTimeout(() => {
