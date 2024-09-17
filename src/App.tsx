@@ -14,7 +14,7 @@ const App: React.FC = () => {
   useEffect(() => {
     const checkAuth = () => {
       setTimeout(() => {
-        const token = sessionStorage.getItem(AppConfig.AuthToken);
+        const token = localStorage.getItem(AppConfig.AuthToken);
         if (token) {
            navigate(routePath.Dashboard);
         } else {

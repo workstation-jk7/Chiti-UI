@@ -15,8 +15,8 @@ const LoginPage: React.FC = () => {
       const result = await signInWithPopup(auth, provider);
       // The signed-in user info
       const user = result.user;
-      sessionStorage.setItem(AppConfig.AuthToken, (user as any)?.accessToken);
-      sessionStorage.setItem('user', JSON.stringify(user));
+      localStorage.setItem(AppConfig.AuthToken, (user as any)?.accessToken);
+      localStorage.setItem('user', JSON.stringify(user));
       //alert(user?.displayName);
       setTimeout(() => {
         navigate(routePath.Dashboard);

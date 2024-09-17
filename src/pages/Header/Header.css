@@ -17,3 +17,7 @@
 .header-container .header-item > button {
     margin-right: 5px;
 }
+
+.header-container .header-item > .date-picker {
+    width: 90%;
+}
