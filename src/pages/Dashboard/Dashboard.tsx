@@ -1,32 +1,14 @@
 import React from 'react';
 import Navigation from '../Navigation/Navigation';
 import Header from '../Header/Header';
-
-
-import { Button } from "@/components/ui/button"
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select"
+import BottomNav from '../BottomNav/BottomNav';
 
 const DashboardPage: React.FC = () => {
   return (
     <div>
       <Header></Header>
-      <Navigation></Navigation>
+      {/* <Navigation></Navigation> */}
+      <BottomNav></BottomNav>
     </div>
   );
 };
