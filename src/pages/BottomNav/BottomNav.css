@@ -1,0 +1,17 @@
+.floating-icon-highlight {
+    width: 65px;
+    height: 65px;
+    position: absolute;
+    background: rgb(255 255 255);
+    z-index: -1;
+    border-radius: 9999px;
+    top: -8px;
+}
+
+.floating-icon {
+    position: absolute;
+    top: -25px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}

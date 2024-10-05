@@ -1,34 +1,37 @@
 import * as React from "react"
-import { CalendarIcon } from "@radix-ui/react-icons"
-import { format } from "date-fns"
-
 import { cn } from "@/lib/utils"
+import { format } from "date-fns"
 import { Button } from "@/components/ui/button"
+import { CalendarIcon } from "@radix-ui/react-icons"
 import { Calendar } from "@/components/ui/calendar"
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
- 
+import HamburgerMenu from '../HamburgerMenu/HamburgerMenu';
+
 import './Header.css';
 
 const Header: React.FC = () => {
-  const userData = JSON.parse(localStorage.getItem('user') as any);
   const [date, setDate] = React.useState<Date>()
- 
+  const [menuOpen, setMenuOpen] = React.useState(false);
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
   return (
     <div className="header-container">
-        <img src='/images/chiti-horizontal-logo.svg'/>
-        <div className="header-item">
-            <div className="date-picker">
+        <div className="header-logo-menu">
+            <HamburgerMenu isOpen={menuOpen} onClose={toggleMenu} />
+            <img width='70' className="ml-3" src='/images/chiti-horizontal-logo.svg'/>
+        </div>
+        <div className="date-picker">
                 <Popover>
                     <PopoverTrigger asChild>
                         <Button
                         variant={"outline"}
                         className={cn(
-                            "w-[240px] justify-start text-left font-normal",
+                            "w-[180px] justify-start text-left font-normal",
                             !date && "text-muted-foreground"
                         )}
                         >
@@ -45,14 +48,8 @@ const Header: React.FC = () => {
                         />
                     </PopoverContent>
                 </Popover>
-            </div>
-            <Avatar>
-                <AvatarImage src={userData?.photoURL}/>
-                <AvatarFallback>{userData?.displayName}</AvatarFallback>
-            </Avatar>
         </div>
     </div>
-    
   )
 }
 

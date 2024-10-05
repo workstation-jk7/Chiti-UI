@@ -1,9 +1,10 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
+import { AppConfig } from '../../App.config';
 import { useNavigate } from 'react-router-dom';
 import { signInWithPopup } from 'firebase/auth';
 import { routePath } from '../../route/RouteConfig';
 import { auth, provider } from '../../auth/firebase';
-import { AppConfig } from '../../App.config';
 
 import './Login.css';
 
@@ -13,15 +14,12 @@ const LoginPage: React.FC = () => {
     try {
       await auth.signOut();
       const result = await signInWithPopup(auth, provider);
-      // The signed-in user info
       const user = result.user;
       localStorage.setItem(AppConfig.AuthToken, (user as any)?.accessToken);
       localStorage.setItem('user', JSON.stringify(user));
-      //alert(user?.displayName);
       setTimeout(() => {
         navigate(routePath.Dashboard);
       },500)
-      // You can redirect the user to the dashboard here
     } catch (error) {
       console.error('Error during sign-in:', error);
     }

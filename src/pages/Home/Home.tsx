@@ -1,10 +1,10 @@
 import React from 'react';
+import TabComponent from '../Tab/TabComponent';
 
 const HomePage: React.FC = () => {
   return (
     <div>
-      <h1>Home Page</h1>
-      <p>Welcome to your Home Page!</p>
+      <TabComponent></TabComponent>
     </div>
   );
 };

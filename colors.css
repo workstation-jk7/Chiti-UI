@@ -1,3 +1,5 @@
 :root {
-    --text-primary: '#17202C'
+    --text-primary: #17202C;
+    --bg-surface-2: #F6FAFF;
+    --border-primary: #D8E2EF;
 }
