@@ -12,7 +12,7 @@ export default defineConfig({
       injectRegister: 'auto',
       manifest: {
         name: 'Chit Fund Application',
-        short_name: 'Chiti',
+        short_name: 'NR Chits',
         description: 'Manage your chit funds efficiently and effectively.',
         theme_color: '#ffffff',
         icons: [

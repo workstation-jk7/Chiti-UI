@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ChitPlanCard from '../ChitPlanCard/ChitPlanCard';
+import { SelectableCard } from '@/components/custom-ui/select-options/select-options';
 
 const TabComponent = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -36,7 +37,21 @@ const TabComponent = () => {
         "startDate": "2024-08-01",
         "commissionPercentage": 5.0,
         "status": "Inactive"
-    }]
+  }];
+
+  const [selectedCard, setSelectedCard] = useState<number | null>(null);
+
+  const cards = [
+    { id: 1, title: "1 Lakh" },
+    { id: 2, title: "2 Lakh" },
+    { id: 3, title: "3 Lakh" },
+    { id: 4, title: "4 Lakh" },
+    { id: 5, title: "5 Lakh" },
+    { id: 6, title: "6 Lakh" },
+    { id: 7, title: "7 Lakh" },
+    { id: 8, title: "8 Lakh" }
+  ];
+
 
   return (
     <div className="w-full">
@@ -80,7 +95,48 @@ const TabComponent = () => {
         })
       }
     </div>}
-        {activeTab === 1 && <div className="p-4">Content for Tab 2</div>}
+        {activeTab === 1 && 
+          // <div className="p-4">
+          //   <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+          //     {cards.map((card) => (
+          //       <SelectableCard
+          //         key={card.id}
+          //         title={card.title}
+          //         description={card.description}
+          //         selected={selectedCard === card.id}
+          //         onClick={() => setSelectedCard(card.id)}
+          //       />
+          //     ))}
+          //   </div>
+          // </div>
+
+// <div className="overflow-x-auto">
+// <div className="flex gap-4 flex-nowrap">
+//   {cards.map((card) => (
+//     <SelectableCard
+//       key={card.id}
+//       title={card.title}
+//       selected={selectedCard === card.id}
+//       onClick={() => setSelectedCard(card.id)}
+//     />
+//   ))}
+// </div>
+// </div>
+
+<div className="overflow-x-auto w-full">
+  <div className="flex gap-4 flex-nowrap">
+    {cards.map((card) => (
+      <SelectableCard
+        key={card.id}
+        title={card.title}
+        selected={selectedCard === card.id}
+        onClick={() => setSelectedCard(card.id)}
+      />
+    ))}
+  </div>
+</div>
+
+        }
         {activeTab === 2 && <div className="p-4">Content for Tab 3</div>}
       </div>
     </div>
