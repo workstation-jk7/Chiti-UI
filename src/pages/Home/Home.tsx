@@ -46,9 +46,9 @@ const HomePage: React.FC = () => {
           ))}
         </div>
       </div>
-      <div className='p-2 flex flex-wrap gap-4 items-center justify-center'>
+      <div className='p-2 flex flex-wrap gap-[1.5rem] items-center justify-center'>
         {progressData.map((item, index) => (
-          <div key={index} className="flex sm:w-[calc(50%-16px)] md:w-[calc(33.33%-8px)] mb-[30px]">
+          <div key={index} className="flex sm:w-[calc(50%-8px)] md:w-[calc(33.33%-8px)] mb-[30px]">
             <ProgressIndicator
               day={item.day} // Numerical day
               dayText={item.dayString} // Day as a string
