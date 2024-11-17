@@ -2,9 +2,9 @@ import React from 'react';
 
 const NotificationPage: React.FC = () => {
   return (
-    <div>
-      <h1>Notification Page</h1>
-      <p>Welcome to your Notification Page!</p>
+    <div className='p-4'>
+      <h2>Alerts</h2>
+      <p>Welcome to your Alerts Page!</p>
     </div>
   );
 };

@@ -79,7 +79,7 @@ const BottomNav = () => {
 
   const navItems = [
     { id: "home", label: "Home", path: routePath.Dashboard, icon: <Home />, canHighlight: true },
-    { id: "wallets", label: "Payments", path: '', icon: <Wallet />, canHighlight: true },
+    { id: "wallets", label: "Payments", path: routePath.Payments, icon: <Wallet />, canHighlight: true },
     { id: "plus", label: "", path: '', canHighlight: false,
       icon: (
         <div className="bg-blue-500 text-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg">
@@ -88,7 +88,7 @@ const BottomNav = () => {
       )
     },
 
-    { id: "auctions", label: "Auctions", path: '', icon: <Hammer />, canHighlight: true },
+    { id: "auctions", label: "Auctions", path: routePath.Auctions, icon: <Hammer />, canHighlight: true },
     { id: "alerts", label: "Alerts", path: routePath.Notification, icon: <Bell />, canHighlight: true },
   ];
 

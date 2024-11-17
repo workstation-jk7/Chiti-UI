@@ -56,9 +56,9 @@ export const SelectableCard: React.FC<SelectableCardProps> = ({
       )}
       onClick={onClick}
     >
-      <h3 className="font-inter font-normal text-sm leading-4 mr-2 whitespace-nowrap">{title}</h3>
+      <h3 className="font-inter font-normal text-sm leading-4 mr-2 whitespace-nowrap" style={{ color: selected ? "white" : "var(--text-secondary)"}}>{title}</h3>
       {description && (
-        <p className="font-inter font-normal text-xs leading-4 whitespace-nowrap">{description}</p>
+        <p className="font-inter font-normal text-xs leading-4 whitespace-nowrap" style={{ color: selected ? "white" : "var(--text-secondary)"}}>{description}</p>
       )}
     </div>
   );

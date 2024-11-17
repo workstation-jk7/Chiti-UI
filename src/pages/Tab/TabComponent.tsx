@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import ChitPlanCard from '../ChitPlanCard/ChitPlanCard';
-import { SelectableCard } from '@/components/custom-ui/select-options/select-options';
 
 const TabComponent = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -39,18 +38,6 @@ const TabComponent = () => {
         "status": "Inactive"
   }];
 
-  const [selectedCard, setSelectedCard] = useState<number | null>(null);
-
-  const cards = [
-    { id: 1, title: "1 Lakh" },
-    { id: 2, title: "2 Lakh" },
-    { id: 3, title: "3 Lakh" },
-    { id: 4, title: "4 Lakh" },
-    { id: 5, title: "5 Lakh" },
-    { id: 6, title: "6 Lakh" },
-    { id: 7, title: "7 Lakh" },
-    { id: 8, title: "8 Lakh" }
-  ];
 
 
   return (
@@ -123,18 +110,7 @@ const TabComponent = () => {
 // </div>
 // </div>
 
-<div className="overflow-x-auto w-full">
-  <div className="flex gap-4 flex-nowrap">
-    {cards.map((card) => (
-      <SelectableCard
-        key={card.id}
-        title={card.title}
-        selected={selectedCard === card.id}
-        onClick={() => setSelectedCard(card.id)}
-      />
-    ))}
-  </div>
-</div>
+<div className='p-4'>Content for Tab 2</div>
 
         }
         {activeTab === 2 && <div className="p-4">Content for Tab 3</div>}

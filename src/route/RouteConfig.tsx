@@ -1,9 +1,11 @@
 import React from 'react';
+import HomePage from '@/pages/Home/Home';
 import LoginPage from '../pages/Login/Login';
 import ProfilePage from '../pages/Profile/Profile';
+import PaymentsPage from '@/pages/Payments/Payments';
+import AuctionsPage from '@/pages/Auctions/Auctions';
 import NotificationPage from '@/pages/Notification/Notification';
 import DashboardLayout from '@/pages/DashboardLayout/DashboardLayout';
-import HomePage from '@/pages/Home/Home';
 
 const ROUTE_PREFIX = '/app';
 
@@ -22,6 +24,8 @@ export const routePath = {
     Dashboard: withPrefix('/dashboard'),
     Login: '/login',
     Profile: withPrefix('/profile'),
+    Auctions: withPrefix('/auctions'),
+    Payments: withPrefix('/payments'),
     Notification: withPrefix('/notification'),
 }
 
@@ -45,6 +49,24 @@ const routesConfig: RouteConfig[] = [
     element: (
       <DashboardLayout>
         <ProfilePage/>
+      </DashboardLayout>
+    ),
+    isPublic: false,
+  },
+  {
+    path: routePath.Auctions,
+    element: (
+      <DashboardLayout>
+        <AuctionsPage/>
+      </DashboardLayout>
+    ),
+    isPublic: false,
+  },
+  {
+    path: routePath.Payments,
+    element: (
+      <DashboardLayout>
+        <PaymentsPage/>
       </DashboardLayout>
     ),
     isPublic: false,

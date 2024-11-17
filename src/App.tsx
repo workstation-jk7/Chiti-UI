@@ -16,6 +16,7 @@ const App: React.FC = () => {
       setTimeout(() => {
         const token = localStorage.getItem(AppConfig.AuthToken);
         if (token) {
+          console.log('Navigate to Dashboard')
            navigate(routePath.Dashboard);
         } else {
            navigate(routePath.Login);
@@ -25,7 +26,7 @@ const App: React.FC = () => {
     };
 
     checkAuth();
-  }, [navigate]);
+  }, []);
 
   if (loading) {
     return (
