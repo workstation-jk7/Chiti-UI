@@ -38,6 +38,7 @@ const CreatePlanForm = ({ isOpen, onClose, onSubmit }: { isOpen: boolean; onClos
   const handleCancel = () => {
     reset(); // Reset form state on cancel
     onClose(); // Close the modal
+    document.body.style.pointerEvents = "auto"; // Reset pointer events
   };
 
   return (
@@ -60,107 +61,100 @@ const CreatePlanForm = ({ isOpen, onClose, onSubmit }: { isOpen: boolean; onClos
             {errors.groupName && <p className="text-red-500 text-sm">{errors.groupName.message}</p>}
           </div>
 
-          <div className="flex gap-4">
-          
-            {/* Plan Type */}
-            <div className="w-1/2">
-              <label className="block text-sm font-medium text-gray-700">Plan type</label>
-              <Controller
-                control={control}
-                name="planType"
-                render={({ field }) => (
-                  <Select
-                    onValueChange={(value) => field.onChange(value)} // Update form state
-                    value={field.value} // Bind the current value to the Select component
-                  >
-                    <SelectTrigger className="w-full">
-                      <SelectValue placeholder="Select a plan type" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {
-                        PlanTypeConfig?.map(config => {
-                          return <SelectItem value={config.value}>{config.label}</SelectItem>
-                        })
-                      }
-                    </SelectContent>
-                  </Select>
-                )}
-              />
-              {errors.planType && <p className="text-red-500 text-sm">{errors.planType.message}</p>}
-            </div>
-
-            {/* Number of Customers */}
-            <div className="w-1/2">
-              <label className="block text-sm font-medium text-gray-700">No. of customers</label>
-              <Controller
-                control={control}
-                name="numCustomers"
-                render={({ field }) => (
-                  <Input
-                    type="number"
-                    placeholder="Enter number of customers"
-                    value={field.value || ""}
-                    onChange={(e) => {
-                      const value = e.target.value;
-                      field.onChange(value === "" ? undefined : parseInt(value, 10));
-                    }}
-                  />
-                )}
-              />
-              {errors.numCustomers && <p className="text-red-500 text-sm">{errors.numCustomers.message}</p>}
-            </div>
+          {/* Plan Type */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700">Plan type</label>
+            <Controller
+              control={control}
+              name="planType"
+              render={({ field }) => (
+                <Select
+                  onValueChange={(value) => field.onChange(value)} // Update form state
+                  value={field.value} // Bind the current value to the Select component
+                >
+                  <SelectTrigger className="w-full">
+                    <SelectValue placeholder="Select a plan type" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {
+                      PlanTypeConfig?.map(config => {
+                        return <SelectItem value={config.value}>{config.label}</SelectItem>
+                      })
+                    }
+                  </SelectContent>
+                </Select>
+              )}
+            />
+            {errors.planType && <p className="text-red-500 text-sm">{errors.planType.message}</p>}
           </div>
 
-          <div className="flex gap-4">
-
-            {/* Period in Months */}
-            <div className="w-1/2">
-              <label className="block text-sm font-medium text-gray-700">No. of months</label>
-              <Controller
-                control={control}
-                name="periodMonths"
-                render={({ field }) => (
-                  <Input
-                    type="number"
-                    placeholder="Enter period in months"
-                    value={field.value || ""}
-                    onChange={(e) => {
-                      const value = e.target.value;
-                      field.onChange(value === "" ? undefined : parseInt(value, 10));
-                    }}
-                  />
-                )}
-              />
-              {errors.periodMonths && (
-                <p className="text-red-500 text-sm">{errors.periodMonths.message}</p>
+          {/* Number of Customers */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700">No. of customers</label>
+            <Controller
+              control={control}
+              name="numCustomers"
+              render={({ field }) => (
+                <Input
+                  type="number"
+                  placeholder="Enter number of customers"
+                  value={field.value || ""}
+                  onChange={(e) => {
+                    const value = e.target.value;
+                    field.onChange(value === "" ? undefined : parseInt(value, 10));
+                  }}
+                />
               )}
-            </div>
+            />
+            {errors.numCustomers && <p className="text-red-500 text-sm">{errors.numCustomers.message}</p>}
+          </div>
+        
+          {/* Period in Months */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700">No. of months</label>
+            <Controller
+              control={control}
+              name="periodMonths"
+              render={({ field }) => (
+                <Input
+                  type="number"
+                  placeholder="Enter period in months"
+                  value={field.value || ""}
+                  onChange={(e) => {
+                    const value = e.target.value;
+                    field.onChange(value === "" ? undefined : parseInt(value, 10));
+                  }}
+                />
+              )}
+            />
+            {errors.periodMonths && (
+              <p className="text-red-500 text-sm">{errors.periodMonths.message}</p>
+            )}
+          </div>
 
-            {/* Payment Cycle */}
-            <div className="w-1/2">
-              <label className="block text-sm font-medium text-gray-700">Payment cycle</label>
-              <Controller
-                control={control}
-                name="paymentCycle"
-                render={({ field }) => (
-                  <Select 
-                    onValueChange={(value) => field.onChange(value)} // Update form state
-                    value={field.value} // Bind the current value to the Select component
-                  >
-                    <SelectTrigger className="w-full">
-                      <SelectValue placeholder="Select a payment cycle" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="monthly">Monthly</SelectItem>
-                      <SelectItem value="quarterly">Quarterly</SelectItem>
-                      <SelectItem value="annually">Annually</SelectItem>
-                    </SelectContent>
-                  </Select>
-                )}
-              />
-              {errors.paymentCycle && <p className="text-red-500 text-sm">{errors.paymentCycle.message}</p>}
-            </div>
-
+          {/* Payment Cycle */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700">Payment cycle</label>
+            <Controller
+              control={control}
+              name="paymentCycle"
+              render={({ field }) => (
+                <Select 
+                  onValueChange={(value) => field.onChange(value)} // Update form state
+                  value={field.value} // Bind the current value to the Select component
+                >
+                  <SelectTrigger className="w-full">
+                    <SelectValue placeholder="Select a payment cycle" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="monthly">Monthly</SelectItem>
+                    <SelectItem value="quarterly">Quarterly</SelectItem>
+                    <SelectItem value="annually">Annually</SelectItem>
+                  </SelectContent>
+                </Select>
+              )}
+            />
+            {errors.paymentCycle && <p className="text-red-500 text-sm">{errors.paymentCycle.message}</p>}
           </div>
 
           {/* Start Date (Popover with Calendar) */}
