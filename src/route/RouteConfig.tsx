@@ -6,6 +6,7 @@ import PaymentsPage from '@/pages/Payments/Payments';
 import AuctionsPage from '@/pages/Auctions/Auctions';
 import NotificationPage from '@/pages/Notification/Notification';
 import DashboardLayout from '@/pages/DashboardLayout/DashboardLayout';
+import PlanPage from '@/pages/PlanPage/PlanPage';
 
 const ROUTE_PREFIX = '/app';
 
@@ -22,6 +23,7 @@ interface RouteConfig {
 
 export const routePath = {
     Dashboard: withPrefix('/dashboard'),
+    PlanPage: withPrefix('/plans'),
     Login: '/login',
     Profile: withPrefix('/profile'),
     Auctions: withPrefix('/auctions'),
@@ -33,8 +35,17 @@ const routesConfig: RouteConfig[] = [
   {
     path: routePath.Dashboard,
     element: (
-      <DashboardLayout>
+      <DashboardLayout showHeader={false}>
         <HomePage/>
+      </DashboardLayout>
+    ),
+    isPublic: false,
+  },
+  {
+    path: routePath.PlanPage,
+    element: (
+      <DashboardLayout showHeader={false}>
+        <PlanPage/>
       </DashboardLayout>
     ),
     isPublic: false,

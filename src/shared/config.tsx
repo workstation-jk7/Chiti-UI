@@ -6,3 +6,32 @@ export const ChitPlanTypesData = chitPlanTypes.map(plan => {
         title: `${plan} Lakh`
     }
 });
+
+export const PlanTypeConfig = [
+    {
+      "value": "1L",
+      "label": "1 Lakh"
+    },
+    {
+      "value": "2L",
+      "label": "2 Lakhs"
+    },
+    {
+      "value": "5L",
+      "label": "5 Lakhs"
+    },
+    {
+      "value": "10L",
+      "label": "10 Lakhs"
+    },
+    {
+      "value": "15L",
+      "label": "15 Lakhs"
+    },
+    {
+      "value": "20L",
+      "label": "20 Lakhs"
+    }
+  ];
+
+  
